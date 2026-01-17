@@ -1,0 +1,341 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-form {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h1 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.login-header p {
+  color: #666;
+  margin: 0;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-bottom: 20px;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.login-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #ffcdd2;
+  font-size: 14px;
+}
+
+.error-message.whitelist-error {
+  background-color: #fff3e0;
+  color: #e65100;
+  border: 2px solid #ff9800;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.2);
+  font-weight: 500;
+}
+
+.error-message.whitelist-error::before {
+  content: '🚫 ';
+  margin-right: 8px;
+}
+
+.demo-section {
+  margin-top: 30px;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+}
+
+.divider span {
+  background: white;
+  padding: 0 16px;
+  color: #666;
+  font-size: 14px;
+}
+
+.divider-small {
+  position: relative;
+  text-align: center;
+  margin: 15px 0 10px 0;
+}
+
+.divider-small::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e8e8e8;
+}
+
+.divider-small span {
+  background: white;
+  padding: 0 12px;
+  color: #888;
+  font-size: 12px;
+}
+
+.demo-users {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.demo-user-button {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.demo-user-button:hover:not(:disabled) {
+  background: #667eea;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.demo-user-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.demo-user-button.test-user {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  border: 2px solid #4caf50;
+  font-weight: 600;
+}
+
+.demo-user-button.test-user:hover:not(:disabled) {
+  background: linear-gradient(135deg, #45a049 0%, #3e8e41 100%);
+  border-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 10px;
+  }
+  
+  .login-form {
+    padding: 30px 20px;
+  }
+  
+  .login-header h1 {
+    font-size: 24px;
+  }
+}
+
+/* Metamask specific styles */
+.metamask-install {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.install-metamask-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  background: #f6851b;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.install-metamask-btn:hover {
+  background: #e2761b;
+  transform: translateY(-2px);
+  color: white;
+  text-decoration: none;
+}
+
+.metamask-login {
+  margin-bottom: 20px;
+}
+
+.connected-account {
+  background: #f0f9ff;
+  border: 2px solid #0ea5e9;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.connected-account p {
+  margin: 0 0 8px 0;
+  color: #0369a1;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.account-address {
+  background: #0ea5e9;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.metamask-button {
+  background: linear-gradient(135deg, #f6851b 0%, #e2761b 100%);
+  position: relative;
+}
+
+.metamask-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e2761b 0%, #d1661b 100%);
+  box-shadow: 0 5px 15px rgba(246, 133, 27, 0.4);
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quick-login {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  font-weight: 600;
+}
+
+.quick-login:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+.secondary {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  font-size: 14px;
+  padding: 10px 20px;
+  opacity: 0.8;
+}
+
+.secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  box-shadow: 0 3px 10px rgba(107, 114, 128, 0.3);
+  opacity: 1;
+}
+
+.auth-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #059669;
+  font-weight: 500;
+}
+
+.auth-indicator {
+  background: #10b981;
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+}

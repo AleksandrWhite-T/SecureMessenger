@@ -1,0 +1,262 @@
+/* E2E Status Component Styles */
+
+.e2e-status {
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Compact version (for header/inline display) */
+.e2e-status.compact {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-size: 12px;
+}
+
+.e2e-status.compact.enabled {
+  background: rgba(76, 175, 80, 0.1);
+  color: #4caf50;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.e2e-status.compact.disabled {
+  background: rgba(255, 152, 0, 0.1);
+  color: #ff9800;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.e2e-status.compact.not-supported {
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* Full version (for settings panel) */
+.e2e-status.full {
+  padding: 20px;
+  background: white;
+  border: 1px solid #e0e0e0;
+}
+
+.e2e-status.full.enabled {
+  border-left: 4px solid #4caf50;
+}
+
+.e2e-status.full.disabled {
+  border-left: 4px solid #ff9800;
+}
+
+/* Status header */
+.status-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.status-info {
+  flex: 1;
+}
+
+.status-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.status-text {
+  color: #666;
+  font-size: 13px;
+}
+
+/* Toggle switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Encryption details */
+.encryption-details {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.detail-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #333;
+}
+
+.fingerprint-code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+/* Info and warning sections */
+.encryption-info,
+.warning-info {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.info-item,
+.warning-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.info-item {
+  color: #4caf50;
+}
+
+.warning-item {
+  color: #ff9800;
+}
+
+.info-icon,
+.warning-icon {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+/* Tooltip for compact version */
+.e2e-tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+.tooltip-content {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+}
+
+.tooltip-content .status-text {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.tooltip-content .fingerprint {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background: #f5f5f5;
+  padding: 4px 6px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-size: 10px;
+  color: #666;
+}
+
+.toggle-btn {
+  width: 100%;
+  padding: 6px 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .status-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  
+  .e2e-tooltip {
+    right: auto;
+    left: 0;
+    min-width: 250px;
+  }
+}
